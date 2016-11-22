@@ -1,19 +1,22 @@
-<div class="jumbotron text-center">
-  <h1>Welcome to home</h1>
+<div class="container-fluid text-center welcome">
+<h1>Welcome to home</h1>
 </div>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-4 bg-1">
       <h2>Temperature</h2>
-      <h1><strong><%= @sensor.temperature || '?' %> &degC</strong></h1>
+      <h1><strong><%= @sensor.temperature %> &degC</strong></h1>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 bg-2">
       <h2>Humidity</h2>
-      <h1><strong><%= @sensor.humidity || '?' %> %</strong></h1>
+      <h1><strong><%= @sensor.humidity %> %</strong></h1>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 bg-3">
       <h2>Illumination</h2>
-      <h1><strong><%= @sensor.illumination || '?' %> lk</strong></h1>
+      <h1><strong><%= @sensor.illumination %> lk</strong></h1>
     </div>
+  </div>
+  <div class="container-fluid outside">
+
   </div>
 </div>
