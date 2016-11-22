@@ -1,4 +1,19 @@
-<h2>Hello World</h2>
-<div class="panel panel-danger">
-  The time is now: <%= Time.now %>
+<div class="jumbotron text-center">
+  <h1>Welcome to home</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Temperature</h2>
+      <h1><strong><%= @sensor.temperature %> &degC</strong></h1>
+    </div>
+    <div class="col-sm-4">
+      <h2>Humidity</h2>
+      <h1><strong><%= @sensor.humidity %> %</strong></h1>
+    </div>
+    <div class="col-sm-4">
+      <h2>Illumination</h2>
+      <h1><strong><%= @sensor.illumination %> lk</strong></h1>
+    </div>
+  </div>
 </div>
