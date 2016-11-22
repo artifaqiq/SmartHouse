@@ -15,14 +15,18 @@
 # gem 'pg'
 #
 default: &default
+  host: localhost
   adapter: postgresql
   encoding: unicode
+  username: smarthouse
+  password: 12345678
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
 development:
   <<: *default
+
   database: SmartHouse_development
 
   # The specified database role being used to connect to postgres.
