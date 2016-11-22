@@ -11,19 +11,22 @@ class SensorsController < ApplicationController
     if @json['token'] != Rails.application.secrets.arduino_token.to_s
       render :nothing => true, status: :unauthorized
     else
+      if @json['humidity'] >=0
 
-      if Sensor.create(temperature: @json['temperature'], humidity: @json['humidity'], illumination: @json['illumination'])
-        render :nothing => true, status: :ok
-      else
-        render :nothing => true, status: :bad_request
+        if Sensor.create(temperature: @json['temperature'], humidity: @json['humidity'], illumination: @json['illumination'])
+          render :nothing => true, status: :ok
+        else
+          render :nothing => true, status: :bad_request
+        end
       end
+
     end
 
 
   rescue
     render :nothing => true, status: :bad_request
   end
-3
+
   private
 
   def check_json!

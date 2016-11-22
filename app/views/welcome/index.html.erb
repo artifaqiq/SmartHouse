@@ -1,5 +1,8 @@
-<div class="container-fluid text-center welcome">
-<h1>Welcome to home</h1>
+<div class="container-fluid welcome">
+  <h1 class="text-center">Welcome to home</h1>
+</div>
+<div class="container-fluid updated">
+  <p class="text-right">Updated: <%= time_ago_in_words(@sensor.updated_at)%> ago</p>
 </div>
 <div class="container-fluid">
   <div class="row text-center">
