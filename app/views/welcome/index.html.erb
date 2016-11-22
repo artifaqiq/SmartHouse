@@ -3,7 +3,7 @@
 </div>
 <div class="container-fluid updated">
   <% if (Time.now - @sensor.updated_at).seconds < 60 %>
-      <p class="text-right">Updated <%= (@sensor.updated_at - Time.now).seconds %> seconds ago</p>
+      <p class="text-right">Updated <%= (Time.now - @sensor.updated_at).seconds %> seconds ago</p>
 
   <% else %>
       <p class="text-right">Updated <%= time_ago_in_words(@sensor.updated_at) %> ago</p>
