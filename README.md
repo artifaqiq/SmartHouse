@@ -1,4 +1,4 @@
 # SmartHouse
 Smart house on Arduino and Ruby on Rails
 
-[Live](https://www.google.com)
+[Live](http://avakiana-26-14.herokuapp.com/)
