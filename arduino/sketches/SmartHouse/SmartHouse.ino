@@ -5,8 +5,8 @@
 #define PHOTO_RES_PIN A0
 #define RELAY1_PIN 2
 #define DHT11_PIN 3
-#define YELLOW_LED_PIN 4
-#define GREEN_LED_PIN 5
+#define YELLOW_LED_PIN 5
+#define GREEN_LED_PIN 4
 
 
 #define PORT 80
@@ -44,13 +44,11 @@ void setup() {
   
 }
 
-boolean x = true;
-
 void loop() {
 
   if (millis() - lastConnectionTime > POSTING_INTERVAL) {
     sendSensorsData(dht.readTemperature(), dht.readHumidity(), getIllumination(PHOTO_RES_PIN));
-    Serial.println(relay1_status = getRequestedRelayStatus());
+    relay1_status = getRequestedRelayStatus();
     sendActualRelayStatus(relay1_status);
 
     digitalWrite(RELAY1_PIN, relay1_status);
@@ -150,7 +148,7 @@ boolean getRequestedRelayStatus() {
     client.println("Connection: close");
     client.println();
 
-    Serial.println("Sended");
+//    Serial.println("Sended");
     
   } else {
     Serial.println("connection failed");
