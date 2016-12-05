@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20161204232916) do
   end
 
   create_table "states", force: :cascade do |t|
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.boolean  "relay1",     default: true, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "relay1_requested", default: true, null: false
+    t.boolean  "relay1_actual",    default: true, null: false
   end
 
   create_table "users", force: :cascade do |t|

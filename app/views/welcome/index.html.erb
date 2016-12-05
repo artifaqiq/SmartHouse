@@ -1,6 +1,7 @@
 <div class="container-fluid welcome">
   <h1 class="text-center">Welcome to home</h1>
 </div>
+
 <div class="container-fluid updated">
   <% if (Time.now - @sensor.updated_at).seconds < 60 %>
       <p class="text-right">Updated <%= (Time.now - @sensor.updated_at).seconds.round %> seconds ago</p>
@@ -34,7 +35,8 @@
     <div class="col-sm-12 bg-4">
       <div class="col-sm-4">
         <h2>Relay 1</h2>
-        <button onclick="" class="btn btn-block">ON</button>
+        <h3 id="h3_relay1"></h3>
+        <button id="button_relay1" onclick="relay1()" class="btn btn-block relay1"></button>
       </div>
     </div>
   </div>

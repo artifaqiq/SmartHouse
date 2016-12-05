@@ -1,4 +1,25 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  checkState()
+  setInterval(checkState, 500)
+
+checkState = ->
+   $.get '/api/states/show',
+     (data) -> setStatus(data.relay1_actual)
+
+
+setStatus = (status) ->
+  if status
+    document.getElementById("button_relay1").textContent = "OFF"
+    document.getElementById("h3_relay1").textContent = "Status: ON"
+  else
+    document.getElementById("button_relay1").textContent = "ON"
+    document.getElementById("h3_relay1").textContent = "Status: OFF"
+
+@relay1 = ->
+
+  $.post '/api/states/update',
+    JSON.stringify
+      relay1_requested: document.getElementById("button_relay1").textContent == "ON" ? true : false
+      token: '12345678'
+
 

@@ -11,7 +11,8 @@ class StatesController < ApplicationController
       render :nothing => true, status: :unauthorized
 
     else
-      if State.last.update(relay1: @json["relay1"])
+      @json.delete('token')
+      if State.last.update(@json)
         render :nothing => true, status: :ok
       end
     end
@@ -24,9 +25,9 @@ class StatesController < ApplicationController
 
   def check_json!
     @json = JSON.parse(request.body.read)
+
   rescue JSON::ParserError => e
     render :nothing => true,
            status: :bad_request
-
   end
 end
