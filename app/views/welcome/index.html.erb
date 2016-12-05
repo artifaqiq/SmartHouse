@@ -7,7 +7,7 @@
       <p class="text-right">Updated <%= (Time.now - @sensor.updated_at).seconds.round %> seconds ago</p>
 
   <% else %>
-      <p class="text-right">Updated <%= time_ago_in_words(@sensor.updated_at) %> ago</p>
+      <p class="text-right" id="updated_at">Updated <%= time_ago_in_words(@sensor.updated_at) %> ago</p>
   <% end %>
 
 </div>
@@ -15,15 +15,15 @@
   <div class="row text-center">
     <div class="col-sm-4 bg-1">
       <h2>Temperature</h2>
-      <h1><strong><%= @sensor.temperature %> &degC</strong></h1>
+      <h1><strong id="temperature"><%= @sensor.temperature %> &degC</strong></h1>
     </div>
     <div class="col-sm-4 bg-2">
       <h2>Humidity</h2>
-      <h1><strong><%= @sensor.humidity %> %</strong></h1>
+      <h1><strong id="humidity"><%= @sensor.humidity %> %</strong></h1>
     </div>
     <div class="col-sm-4 bg-3">
       <h2>Illumination</h2>
-      <h1><strong><%= @sensor.illumination %> lx</strong></h1>
+      <h1><strong id="illumination"><%= @sensor.illumination %> lx</strong></h1>
     </div>
   </div>
   <div class="container-fluid outside">
@@ -33,7 +33,7 @@
 <div class="container-fluid">
   <div class="row text-center">
     <div class="col-sm-12 bg-4">
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-sm-offset-4">
         <h2>Relay 1</h2>
         <h3 id="h3_relay1"></h3>
         <button id="button_relay1" onclick="relay1()" class="btn btn-block relay1"></button>

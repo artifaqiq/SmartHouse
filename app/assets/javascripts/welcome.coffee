@@ -5,6 +5,8 @@ $(document).ready ->
 checkState = ->
    $.get '/api/states/show',
      (data) -> setStatus(data.relay1_actual)
+   $.get '/api/sensors/online',
+     (obj) -> setSensors(obj)
 
 
 setStatus = (status) ->
@@ -14,6 +16,14 @@ setStatus = (status) ->
   else
     document.getElementById("button_relay1").textContent = "ON"
     document.getElementById("h3_relay1").textContent = "Status: OFF"
+
+setSensors = (obj) ->
+  document.getElementById("temperature").textContent = obj.temperature + " °C"
+  document.getElementById("humidity").textContent = obj.humidity + " %"
+  document.getElementById("illumination").textContent = obj.illumination + " lx"
+
+  time = Date.parse(obj.created_at)
+  document.getElementById("updated_at").textContent = "Updated " + ((new Date() - time) // 1000) + " seconds ago"
 
 @relay1 = ->
 
