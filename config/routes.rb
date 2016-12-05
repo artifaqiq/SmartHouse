@@ -8,6 +8,11 @@ Rails.application.routes.draw do
       get '/online' => 'sensors#show'
       post '/update' => 'sensors#create'
     end
+
+    scope '/states' do
+      get '/show' => 'states#show'
+      post '/update' => 'states#update'
+    end
   end
 
 end
