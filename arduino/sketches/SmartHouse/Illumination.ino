@@ -1,7 +1,7 @@
 const float Ra = 48000.0;
 const int Ea = 10;
 
-const float R = 15300;
+const float R = 200000.0;
 const float VCC = 5.0;
 
 int getIllumination(int pin) {

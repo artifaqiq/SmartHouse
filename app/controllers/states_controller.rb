@@ -6,6 +6,10 @@ class StatesController < ApplicationController
     render json: @state, except: [:created_at, :id]
   end
 
+  def show_relay1_requested
+    render text: (State.last.relay1_requested ? "1" : "0")
+  end
+
   def update
     if @json['token'] != Rails.application.secrets.arduino_token.to_s
       render :nothing => true, status: :unauthorized

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     scope '/states' do
       get '/show' => 'states#show'
       post '/update' => 'states#update'
+      get '/relay1_requested' => 'states#show_relay1_requested'
     end
   end
 
