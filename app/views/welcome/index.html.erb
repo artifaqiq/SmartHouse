@@ -35,8 +35,8 @@
     <div class="col-sm-12 bg-4">
       <div class="col-sm-4 col-sm-offset-4">
         <h2>Relay 1</h2>
-        <h3 id="h3_relay1"></h3>
-        <button id="button_relay1" onclick="relay1()" class="btn btn-block relay1"></button>
+        <h3 id="h3_relay1">Status: <%= @state.relay1_actual ? "ON" : "OFF" %></h3>
+        <button id="button_relay1" onclick="relay1()" class="btn btn-block relay1"><%= @state.relay1_actual ? "OFF" : "ON" %></button>
       </div>
     </div>
   </div>
