@@ -11,7 +11,7 @@
 
 #define PORT 80
 #define DOMAIN  "avakiana-26-14.herokuapp.com"
-#define POSTING_INTERVAL 4000L
+#define POSTING_INTERVAL 1000L
 
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
